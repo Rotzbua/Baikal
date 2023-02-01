@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "eff19ce0a8c1fe2ed80fa17a51c97e62",
     "content-hash": "ac99901fbf7318ad4684e67bb30695ba",
     "packages": [
         {
@@ -42,7 +41,7 @@
                 }
             ],
             "description": "Baïkal Core Services Metapackage",
-            "time": "2015-03-10 09:51:16"
+            "time": "2015-03-10T09:51:16+00:00"
         },
         {
             "name": "baikal/dav-services-bundle",
@@ -79,7 +78,7 @@
                 }
             ],
             "description": "Baïkal DAV Services Bundle",
-            "time": "2015-03-11 08:50:45"
+            "time": "2015-03-11T08:50:45+00:00"
         },
         {
             "name": "baikal/kernel-bundle",
@@ -113,7 +112,7 @@
                 }
             ],
             "description": "Baïkal Kernel Bundle",
-            "time": "2015-03-08 20:29:23"
+            "time": "2015-03-08T20:29:23+00:00"
         },
         {
             "name": "baikal/model-bundle",
@@ -147,7 +146,7 @@
                 }
             ],
             "description": "Baïkal Model Bundle",
-            "time": "2015-03-14 21:44:20"
+            "time": "2015-03-14T21:44:20+00:00"
         },
         {
             "name": "baikal/rest-bundle",
@@ -187,7 +186,7 @@
                 }
             ],
             "description": "Baïkal REST Bundle",
-            "time": "2015-03-10 10:13:08"
+            "time": "2015-03-10T10:13:08+00:00"
         },
         {
             "name": "baikal/wellknown-bundle",
@@ -221,7 +220,7 @@
                 }
             ],
             "description": "Baïkal Well-known Bundle",
-            "time": "2015-03-08 22:45:02"
+            "time": "2015-03-08T22:45:02+00:00"
         },
         {
             "name": "brianium/habitat",
@@ -262,7 +261,7 @@
                 }
             ],
             "description": "A dependable php environment",
-            "time": "2013-06-08 04:42:29"
+            "time": "2013-06-08T04:42:29+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -330,7 +329,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-12-20 20:49:38"
+            "time": "2014-12-20T20:49:38+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -400,7 +399,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-01-15 20:38:55"
+            "time": "2015-01-15T20:38:55+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -468,7 +467,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-02-03 23:07:43"
+            "time": "2014-02-03T23:07:43+00:00"
         },
         {
             "name": "doctrine/common",
@@ -546,7 +545,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2014-05-21 19:28:51"
+            "time": "2014-05-21T19:28:51+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -617,7 +616,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-01-12 21:52:47"
+            "time": "2015-01-12T21:52:47+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -694,7 +693,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-02-28 11:04:45"
+            "time": "2015-02-28T11:04:45+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -778,7 +777,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-11-28 09:43:36"
+            "time": "2014-11-28T09:43:36+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -837,7 +836,7 @@
                 "migrations",
                 "schema"
             ],
-            "time": "2015-02-16 13:24:46"
+            "time": "2015-02-16T13:24:46+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -904,7 +903,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2014-12-20T21:24:13+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -958,7 +957,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "doctrine/migrations",
@@ -1016,7 +1015,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-03-13 10:18:59"
+            "time": "2015-03-13T10:18:59+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1089,7 +1088,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2014-12-16 13:45:01"
+            "time": "2014-12-16T13:45:01+00:00"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -1158,7 +1157,7 @@
                 "oauth2",
                 "server"
             ],
-            "time": "2014-11-06 08:02:11"
+            "time": "2014-11-06T08:02:11+00:00"
         },
         {
             "name": "friendsofsymfony/oauth2-php",
@@ -1212,7 +1211,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2014-11-03 10:21:20"
+            "time": "2014-11-03T10:21:20+00:00"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -1290,7 +1289,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2014-08-15 12:18:54"
+            "time": "2014-08-15T12:18:54+00:00"
         },
         {
             "name": "icanboogie/inflector",
@@ -1340,7 +1339,7 @@
                 "singularize",
                 "underscore"
             ],
-            "time": "2014-09-16 15:06:49"
+            "time": "2014-09-16T15:06:49+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1390,7 +1389,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2014-01-12 16:20:24"
+            "time": "2014-01-12T16:20:24+00:00"
         },
         {
             "name": "jms/metadata",
@@ -1442,7 +1441,7 @@
                 "xml",
                 "yaml"
             ],
-            "time": "2014-07-12 07:13:19"
+            "time": "2014-07-12T07:13:19+00:00"
         },
         {
             "name": "jms/parser-lib",
@@ -1477,7 +1476,7 @@
                 "Apache2"
             ],
             "description": "A library for easily creating recursive-descent parsers.",
-            "time": "2012-11-18 18:08:43"
+            "time": "2012-11-18T18:08:43+00:00"
         },
         {
             "name": "jms/serializer",
@@ -1547,7 +1546,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2014-03-18 08:39:00"
+            "time": "2014-03-18T08:39:00+00:00"
         },
         {
             "name": "jms/serializer-bundle",
@@ -1617,7 +1616,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-12-05 14:36:11"
+            "time": "2013-12-05T14:36:11+00:00"
         },
         {
             "name": "knplabs/knp-menu",
@@ -1681,7 +1680,7 @@
                 "menu",
                 "tree"
             ],
-            "time": "2014-08-01 09:50:16"
+            "time": "2014-08-01T09:50:16+00:00"
         },
         {
             "name": "knplabs/knp-menu-bundle",
@@ -1737,7 +1736,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2015-03-04 10:53:50"
+            "time": "2015-03-04T10:53:50+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1810,7 +1809,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-09 09:58:04"
+            "time": "2015-03-09T09:58:04+00:00"
         },
         {
             "name": "nelmio/cors-bundle",
@@ -1865,7 +1864,7 @@
                 "cors",
                 "crossdomain"
             ],
-            "time": "2014-12-10 17:26:49"
+            "time": "2014-12-10T17:26:49+00:00"
         },
         {
             "name": "netgusto/autoroute-bundle",
@@ -1908,7 +1907,7 @@
                 "autoroute",
                 "symfony"
             ],
-            "time": "2014-07-22 12:24:44"
+            "time": "2014-07-22T12:24:44+00:00"
         },
         {
             "name": "netgusto/bootcamp-bundle",
@@ -1957,7 +1956,7 @@
                 "scalingo",
                 "symfony"
             ],
-            "time": "2015-09-29 20:47:41"
+            "time": "2015-09-29T20:47:41+00:00"
         },
         {
             "name": "netgusto/parametertouch-bundle",
@@ -1999,7 +1998,7 @@
             "keywords": [
                 "symfony"
             ],
-            "time": "2014-07-24 12:38:30"
+            "time": "2014-07-24T12:38:30+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2049,7 +2048,7 @@
                 "sequence",
                 "set"
             ],
-            "time": "2014-03-11 13:46:42"
+            "time": "2014-03-11T13:46:42+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -2098,7 +2097,7 @@
                 "php",
                 "type"
             ],
-            "time": "2014-01-09 22:37:17"
+            "time": "2014-01-09T22:37:17+00:00"
         },
         {
             "name": "psr/log",
@@ -2136,7 +2135,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
         },
         {
             "name": "sabre/dav",
@@ -2210,7 +2209,7 @@
                 "framework",
                 "iCalendar"
             ],
-            "time": "2015-02-25 18:13:20"
+            "time": "2015-02-25T18:13:20+00:00"
         },
         {
             "name": "sabre/event",
@@ -2257,7 +2256,7 @@
                 "promise",
                 "signal"
             ],
-            "time": "2014-10-06 23:26:48"
+            "time": "2014-10-06T23:26:48+00:00"
         },
         {
             "name": "sabre/http",
@@ -2308,7 +2307,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2014-12-10 20:14:39"
+            "time": "2014-12-10T20:14:39+00:00"
         },
         {
             "name": "sabre/vobject",
@@ -2374,7 +2373,7 @@
                 "jCard",
                 "vCard"
             ],
-            "time": "2015-02-25 17:47:50"
+            "time": "2015-02-25T17:47:50+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2434,7 +2433,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-02-27 12:59:18"
+            "time": "2015-02-27T12:59:18+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2489,7 +2488,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2014-12-02 09:52:52"
+            "time": "2014-12-02T09:52:52+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -2534,7 +2533,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-01-26 16:25:19"
+            "time": "2015-01-26T16:25:19+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2586,7 +2585,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-03-14 06:06:39"
+            "time": "2015-03-14T06:06:39+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2645,7 +2644,86 @@
                 "log",
                 "logging"
             ],
-            "time": "2015-01-04 20:21:17"
+            "time": "2015-01-04T20:21:17+00:00"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "aed596913b70fae57be53d86faa2e9ef85a2297b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/aed596913b70fae57be53d86faa2e9ef85a2297b",
+                "reference": "aed596913b70fae57be53d86faa2e9ef85a2297b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.19-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.19.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T09:01:57+00:00"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2702,7 +2780,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-12-01 17:44:50"
+            "time": "2014-12-01T17:44:50+00:00"
         },
         {
             "name": "symfony/symfony",
@@ -2818,7 +2896,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-02-02 18:02:30"
+            "time": "2015-02-02T18:02:30+00:00"
         },
         {
             "name": "twig/extensions",
@@ -2870,34 +2948,43 @@
                 "i18n",
                 "text"
             ],
-            "time": "2014-10-30 14:30:03"
+            "time": "2014-10-30T14:30:03+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v1.18.0",
+            "version": "v1.42.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
+                "reference": "21707d6ebd05476854805e4f91b836531941bcd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/21707d6ebd05476854805e4f91b836531941bcd4",
+                "reference": "21707d6ebd05476854805e4f91b836531941bcd4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.4"
+                "php": ">=5.4.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18-dev"
+                    "dev-master": "1.42-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2918,16 +3005,20 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
+            "homepage": "https://twig.symfony.com",
             "keywords": [
                 "templating"
             ],
-            "time": "2015-01-25 17:32:08"
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/1.x"
+            },
+            "time": "2019-06-18T15:35:16+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -2967,7 +3058,7 @@
                 }
             ],
             "description": "JSONP callback validator.",
-            "time": "2014-01-20 22:35:06"
+            "time": "2014-01-20T22:35:06+00:00"
         },
         {
             "name": "willdurand/negotiation",
@@ -3016,7 +3107,7 @@
                 "header",
                 "negotiation"
             ],
-            "time": "2014-10-02 07:26:00"
+            "time": "2014-10-02T07:26:00+00:00"
         }
     ],
     "packages-dev": [
@@ -3066,15 +3157,15 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-02-11 07:21:23"
+            "time": "2015-02-11T07:21:23+00:00"
         }
     ],
     "aliases": [
         {
-            "alias": "2.0.0-alpha1",
-            "alias_normalized": "2.0.0.0-alpha1",
+            "package": "baikal/core",
             "version": "9999999-dev",
-            "package": "baikal/core"
+            "alias": "2.0.0-alpha1",
+            "alias_normalized": "2.0.0.0-alpha1"
         }
     ],
     "minimum-stability": "dev",
@@ -3092,5 +3183,6 @@
         "php": ">=5.3.3",
         "ext-mbstring": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
