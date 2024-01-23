@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-class Template extends \Flake\Core\FLObject {
+class Template extends FLObject {
     private $sAbsPath = "";
     private $sHtml = "";
 

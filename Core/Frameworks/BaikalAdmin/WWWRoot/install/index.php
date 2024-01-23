@@ -54,42 +54,42 @@ if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
 require PROJECT_PATH_ROOT . "vendor/autoload.php";
 
 # Bootstrapping Flake
-\Flake\Framework::bootstrap();
+Flake\Framework::bootstrap();
 
 # Bootstrap BaikalAdmin
-\BaikalAdmin\Framework::bootstrap();
+BaikalAdmin\Framework::bootstrap();
 
 # Create and setup a page object
-$oPage = new \Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
+$oPage = new Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
 $oPage->injectHTTPHeaders();
 $oPage->setTitle("Baïkal Maintainance");
 $oPage->setBaseUrl(PROJECT_URI);
 
-$oPage->zone("navbar")->addBlock(new \BaikalAdmin\Controller\Navigation\Topbar\Install());
+$oPage->zone("navbar")->addBlock(new BaikalAdmin\Controller\Navigation\Topbar\Install());
 
 try {
     $config = Yaml::parseFile(PROJECT_PATH_CONFIG . "baikal.yaml");
-} catch (\Exception $e) {
+} catch (Exception $e) {
     $config = null;
     error_log('Error reading baikal.yaml file : ' . $e->getMessage());
 }
 
 if (!$config || !isset($config['system']["configured_version"])) {
     # we have to upgrade Baïkal (existing installation)
-    $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Install\Initialize());
+    $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Install\Initialize());
 } elseif (!isset($config['system']["admin_passwordhash"])) {
     # we have to set an admin password
-    $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Install\Initialize());
+    $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Install\Initialize());
 } else {
     if ($config['system']["configured_version"] !== BAIKAL_VERSION) {
         # we have to upgrade Baïkal
-        if (\Flake\Util\Tools::GET("upgradeConfirmed")) {
-            $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Install\VersionUpgrade());
+        if (Flake\Util\Tools::GET("upgradeConfirmed")) {
+            $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Install\VersionUpgrade());
         } else {
-            $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Install\UpgradeConfirmation());
+            $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Install\UpgradeConfirmation());
         }
     } elseif (!file_exists(PROJECT_PATH_SPECIFIC . '/INSTALL_DISABLED')) {
-        $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Install\Database());
+        $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Install\Database());
     } else {
         echo "Installation was already completed. Please head to the admin interface to modify any settings.\n";
         exit();

@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class PostConnectionService extends \Flake\Core\FLObject {
+abstract class PostConnectionService extends FLObject {
     /**
      * @var array
      */

@@ -29,7 +29,7 @@ namespace Flake\Core;
 
 use Flake\Core\Render\Container;
 
-abstract class Route extends \Flake\Core\FLObject {
+abstract class Route extends FLObject {
     # should be abstract, but is not, due to PHP strict standard
     static function layout(Container &$oRenderContainer) {
     }

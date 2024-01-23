@@ -79,7 +79,7 @@ class Tools extends \Flake\Core\FLObject {
             foreach ($array_in as $key => $val) {
                 $result .= '<tr><td valign="top"><font face="Verdana,Arial" size="1">' . htmlspecialchars((string) $key) . '</font></td><td>';
                 if (is_array($array_in[$key])) {
-                    $result .= \Flake\Util\Tools::view_array($array_in[$key]);
+                    $result .= Tools::view_array($array_in[$key]);
                 } else {
                     if (is_object($val)) {
                         if (method_exists($val, "__toString")) {
@@ -142,7 +142,7 @@ class Tools extends \Flake\Core\FLObject {
         }
 
         if (is_array($var)) {
-            echo \Flake\Util\Tools::view_array($var);
+            echo Tools::view_array($var);
         } elseif (is_object($var)) {
             echo '<b>|Object:<pre>';
             print_r($var);
@@ -173,7 +173,7 @@ class Tools extends \Flake\Core\FLObject {
 
     static function POST($sVar = false) {
         if ($sVar !== false) {
-            $aData = \Flake\Util\Tools::POST();
+            $aData = Tools::POST();
             if (array_key_exists($sVar, $aData)) {
                 return $aData[$sVar];
             }
@@ -186,7 +186,7 @@ class Tools extends \Flake\Core\FLObject {
 
     static function GET($sVar = false) {
         if ($sVar !== false) {
-            $aData = \Flake\Util\Tools::GET();
+            $aData = Tools::GET();
             if (array_key_exists($sVar, $aData)) {
                 return $aData[$sVar];
             }
@@ -199,7 +199,7 @@ class Tools extends \Flake\Core\FLObject {
 
     static function GP($sVar = false) {
         if ($sVar !== false) {
-            $aData = \Flake\Util\Tools::GP();
+            $aData = Tools::GP();
             if (array_key_exists($sVar, $aData)) {
                 return $aData[$sVar];
             }
@@ -208,8 +208,8 @@ class Tools extends \Flake\Core\FLObject {
         }
 
         return array_merge(
-            \Flake\Util\Tools::GET(),
-            \Flake\Util\Tools::POST()
+            Tools::GET(),
+            Tools::POST()
         );
     }
 
@@ -229,7 +229,7 @@ class Tools extends \Flake\Core\FLObject {
     }
 
     static function refreshPage() {
-        header("Location: " . \Flake\Util\Tools::getCurrentUrl());
+        header("Location: " . Tools::getCurrentUrl());
         exit(0);
     }
 
@@ -342,10 +342,10 @@ class Tools extends \Flake\Core\FLObject {
 </html>
 TEST;
 
-        $sHeaders = "From: " . $sFromName . "<" . $sFromAddress . ">" . "\r\n";
-        $sHeaders .= "Reply-To: " . $sReplyToName . "<" . $sReplyToAddress . ">" . "\r\n";
-        $sHeaders .= "Bcc: " . $sReplyToName . "<" . $sReplyToAddress . ">" . "\r\n";
-        $sHeaders .= "Content-Type: text/html" . "\r\n";
+        $sHeaders = "From: " . $sFromName . "<" . $sFromAddress . ">\r\n";
+        $sHeaders .= "Reply-To: " . $sReplyToName . "<" . $sReplyToAddress . ">\r\n";
+        $sHeaders .= "Bcc: " . $sReplyToName . "<" . $sReplyToAddress . ">\r\n";
+        $sHeaders .= "Content-Type: text/html\r\n";
 
         mail($sToAddress, $sSubject, $sMessage, $sHeaders);
     }
@@ -646,7 +646,7 @@ TEST;
 
     static function stopWatch($sWhat) {
         #		return;
-        $iStop = \Flake\Util\Tools::milliseconds();
+        $iStop = Tools::milliseconds();
 
         $trail = debug_backtrace();
         $aLastNode = $trail[0];    // l'appel qui nous intéresse
@@ -761,14 +761,14 @@ TEST;
         $data = "";
         if ($bodylen > 0) {
             switch ($method) {
-            case 8:
-                // Currently the only supported compression method:
-                $data = gzinflate($body, $maxlength);
-                break;
-            default:
-                $error = "Unknown compression method.";
+                case 8:
+                    // Currently the only supported compression method:
+                    $data = gzinflate($body, $maxlength);
+                    break;
+                default:
+                    $error = "Unknown compression method.";
 
-                return false;
+                    return false;
             }
         }  // zero-byte body content is allowed
         // Verifiy CRC32

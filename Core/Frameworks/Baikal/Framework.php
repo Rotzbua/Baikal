@@ -46,8 +46,8 @@ class Framework extends \Flake\Core\Framework {
         # Registering Baikal classloader
         define("BAIKAL_PATH_FRAMEWORKROOT", dirname(__FILE__) . "/");
 
-        \Baikal\Core\Tools::assertEnvironmentIsOk();
-        \Baikal\Core\Tools::configureEnvironment();
+        Core\Tools::assertEnvironmentIsOk();
+        Core\Tools::configureEnvironment();
 
         # Check that a config file exists
         if (!file_exists(PROJECT_PATH_CONFIG . "baikal.yaml")) {
@@ -69,7 +69,7 @@ class Framework extends \Flake\Core\Framework {
                         self::installTool();
                     }
 
-                    \Baikal\Core\Tools::assertBaikalIsOk();
+                    Core\Tools::assertBaikalIsOk();
 
                     set_error_handler("\Baikal\Framework::exception_error_handler");
                 }

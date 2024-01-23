@@ -46,20 +46,20 @@ if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 
 # Bootstrapping Flake
-\Flake\Framework::bootstrap();
+Flake\Framework::bootstrap();
 
 # Bootstrapping Baïkal
-\BaikalAdmin\Framework::bootstrap();
+BaikalAdmin\Framework::bootstrap();
 
 # Create and setup a page object
-$oPage = new \Flake\Controller\Page(PROJECT_PATH_ROOT . "Core/Resources/Web/Baikal/Templates/Page/index.html");
+$oPage = new Flake\Controller\Page(PROJECT_PATH_ROOT . "Core/Resources/Web/Baikal/Templates/Page/index.html");
 $oPage->injectHTTPHeaders();
 $oPage->setTitle("Baïkal server");
 $oPage->setBaseUrl(PROJECT_URI);
 
 # Draw page
-$oPage->zone("navbar")->addBlock(new \Baikal\Controller\Navigation\Topbar\Anonymous());
-$oPage->zone("Payload")->addBlock(new \Baikal\Controller\Main());
+$oPage->zone("navbar")->addBlock(new Baikal\Controller\Navigation\Topbar\Anonymous());
+$oPage->zone("Payload")->addBlock(new Baikal\Controller\Main());
 
 # Render the page
 echo $oPage->render();

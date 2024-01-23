@@ -48,14 +48,14 @@ if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 
 # Bootstrapping Flake
-\Flake\Framework::bootstrap();
+Flake\Framework::bootstrap();
 
 # Bootstrapping Baïkal
-\Baikal\Framework::bootstrap();
+Baikal\Framework::bootstrap();
 
 try {
     $config = Yaml::parseFile(PROJECT_PATH_CONFIG . "baikal.yaml");
-} catch (\Exception $e) {
+} catch (Exception $e) {
     exit('<h1>Incomplete installation</h1><p>Ba&iuml;kal is missing its configuration file, or its configuration file is unreadable.');
 }
 
@@ -63,7 +63,7 @@ if (!isset($config['system']["card_enabled"]) || $config['system']["card_enabled
     throw new ErrorException("Baikal CardDAV is disabled.", 0, 255, __FILE__, __LINE__);
 }
 
-$server = new \Baikal\Core\Server(
+$server = new Baikal\Core\Server(
     $config['system']["cal_enabled"],
     $config['system']["card_enabled"],
     $config['system']["dav_auth_type"],

@@ -63,10 +63,10 @@ class Users extends \Flake\Core\Controller {
 
         foreach ($oUsers as $user) {
             $aUsers[] = [
-                "linkcalendars"    => \BaikalAdmin\Controller\Users::linkCalendars($user),
-                "linkaddressbooks" => \BaikalAdmin\Controller\Users::linkAddressBooks($user),
-                "linkedit"         => \BaikalAdmin\Controller\Users::linkEdit($user),
-                "linkdelete"       => \BaikalAdmin\Controller\Users::linkDelete($user),
+                "linkcalendars"    => Users::linkCalendars($user),
+                "linkaddressbooks" => Users::linkAddressBooks($user),
+                "linkedit"         => Users::linkEdit($user),
+                "linkdelete"       => Users::linkDelete($user),
                 "mailtouri"        => $user->getMailtoURI(),
                 "username"         => $user->get("username"),
                 "displayname"      => $user->get("displayname"),
@@ -236,13 +236,13 @@ class Users extends \Flake\Core\Controller {
     }
 
     static function linkCalendars(\Baikal\Model\User $user) {
-        return \BaikalAdmin\Controller\User\Calendars::buildRoute([
+        return User\Calendars::buildRoute([
             "user" => $user->get("id"),
         ]);
     }
 
     static function linkAddressBooks(\Baikal\Model\User $user) {
-        return \BaikalAdmin\Controller\User\AddressBooks::buildRoute([
+        return User\AddressBooks::buildRoute([
             "user" => $user->get("id"),
         ]);
     }

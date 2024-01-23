@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class View extends \Flake\Core\FLObject {
+abstract class View extends FLObject {
     protected $aData;
 
     function __construct() {
@@ -52,7 +52,7 @@ abstract class View extends \Flake\Core\FLObject {
 
     function render() {
         $sTemplatePath = $this->templatesPath();
-        $oTemplate = new \Flake\Core\Template($this->templatesPath());
+        $oTemplate = new Template($this->templatesPath());
 
         return $oTemplate->parse($this->getData());
     }

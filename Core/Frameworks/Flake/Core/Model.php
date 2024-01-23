@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class Model extends \Flake\Core\FLObject {
+abstract class Model extends FLObject {
     protected $aData = [];
 
     protected function getData() {

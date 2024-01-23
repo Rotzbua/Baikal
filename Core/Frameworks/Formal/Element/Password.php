@@ -27,7 +27,7 @@
 
 namespace Formal\Element;
 
-class Password extends \Formal\Element\Text {
+class Password extends Text {
     protected function inputtype() {
         return "password";
     }

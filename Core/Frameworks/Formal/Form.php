@@ -38,15 +38,15 @@ class Form {
         "hook.validation" => false,
         "hook.morphology" => false,
     ];
-    protected $oModelInstance = null;
-    protected $oElements = null;
+    protected $oModelInstance;
+    protected $oElements;
     protected $aErrors = [];
-    protected $bPersisted = null;        # TRUE when form has persisted; available only after execute
+    protected $bPersisted;        # TRUE when form has persisted; available only after execute
 
     protected $sDisplayTitle = "";        # Displayed form title; generated in setModelInstance()
     protected $sDisplayMessage = "";    # Displayed confirm message; generated in execute()
 
-    protected $oMorpho = null;
+    protected $oMorpho;
 
     function __construct($sModelClass, $aOptions = []) {
         $this->sModelClass = $sModelClass;
@@ -208,7 +208,7 @@ class Form {
             # Last chance to generate a confirm message corresponding to what *was* submitted ("Creating", instead of "Editing")
 
             if ($this->floatingModelInstance()) {
-                $this->sDisplayMessage = \Formal\Core\Message::notice(
+                $this->sDisplayMessage = Core\Message::notice(
                     $this->modelInstance()->humanName() . " <i class='" . $this->modelInstance()->icon() . "'></i> <strong>" . $this->modelInstance()->label() . "</strong> has been created.",
                     "",
                     false
@@ -216,7 +216,7 @@ class Form {
                 $bWasFloating = true;
             } else {
                 $bWasFloating = false;
-                $this->sDisplayMessage = \Formal\Core\Message::notice(
+                $this->sDisplayMessage = Core\Message::notice(
                     "Changes on <i class='" . $this->modelInstance()->icon() . "'></i> <strong>" . $this->modelInstance()->label() . "</strong> have been saved.",
                     false,    # No title
                     false    # No close button
@@ -377,7 +377,7 @@ class Form {
                     $aMessages[] = $aError["message"];
                 }
 
-                $this->sDisplayMessage = \Formal\Core\Message::error(
+                $this->sDisplayMessage = Core\Message::error(
                     implode("<br />", $aMessages),
                     "Validation error"
                 );

@@ -27,9 +27,9 @@
 
 namespace Flake\Core\Datastructure;
 
-abstract class ChainLink implements \Flake\Core\Datastructure\Chainable {
-    protected $__container = null;
-    protected $__key = null;
+abstract class ChainLink implements Chainable {
+    protected $__container;
+    protected $__key;
 
     function chain(Chain $container, $key) {
         $this->__container = $container;

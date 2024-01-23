@@ -56,7 +56,7 @@ class AddressBook extends \Flake\Core\Model\Db {
     }
 
     function getContactsBaseRequester() {
-        $oBaseRequester = \Baikal\Model\AddressBook\Contact::getBaseRequester();
+        $oBaseRequester = AddressBook\Contact::getBaseRequester();
         $oBaseRequester->addClauseEquals(
             "addressbookid",
             $this->get("id")

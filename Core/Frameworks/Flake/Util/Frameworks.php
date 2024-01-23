@@ -32,7 +32,7 @@ class Frameworks extends \Flake\Core\FLObject {
     }
 
     function isAFramework($sName) {
-        $sName = trim(\Flake\Util\Tools::trimSlashes($sName));
+        $sName = trim(Tools::trimSlashes($sName));
         if ($sName === "" || $sName === "." || $sName === "..") {
             return false;
         }
@@ -52,6 +52,6 @@ class Frameworks extends \Flake\Core\FLObject {
             throw new \Flake\Core\Exception(htmlspecialchars($$sName) . " is not a framework.", $sName);
         }
 
-        return \Flake\Util\Tools::appendSlash(PROJECT_PATH_FRAMEWORKS . $sName);
+        return Tools::appendSlash(PROJECT_PATH_FRAMEWORKS . $sName);
     }
 }

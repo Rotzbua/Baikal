@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-class CollectionTyped extends \Flake\Core\Collection {
+class CollectionTyped extends Collection {
     protected $sTypeClassOrProtocol;
 
     function __construct($sTypeClassOrProtocol) {
@@ -45,7 +45,7 @@ class CollectionTyped extends \Flake\Core\Collection {
 
     # Create a new collection like this one
     function newCollectionLikeThisOne() {
-        $oCollection = new \Flake\Core\CollectionTyped($this->sTypeClassOrProtocol);
+        $oCollection = new CollectionTyped($this->sTypeClassOrProtocol);
 
         return $oCollection;
     }

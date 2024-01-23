@@ -39,20 +39,20 @@ class User extends \Flake\Core\Model\Db {
         "digesta1" => "",
     ];
 
-    protected $oIdentityPrincipal = null;
+    protected $oIdentityPrincipal;
 
     function initByPrimary($sPrimary) {
         parent::initByPrimary($sPrimary);
 
         # Initializing principals
-        $this->oIdentityPrincipal = \Baikal\Model\Principal::getBaseRequester()
+        $this->oIdentityPrincipal = Principal::getBaseRequester()
             ->addClauseEquals("uri", "principals/" . $this->get("username"))
             ->execute()
             ->first();
     }
 
     function getAddressBooksBaseRequester() {
-        $oBaseRequester = \Baikal\Model\AddressBook::getBaseRequester();
+        $oBaseRequester = AddressBook::getBaseRequester();
         $oBaseRequester->addClauseEquals(
             "principaluri",
             "principals/" . $this->get("username")
@@ -62,7 +62,7 @@ class User extends \Flake\Core\Model\Db {
     }
 
     function getCalendarsBaseRequester() {
-        $oBaseRequester = \Baikal\Model\Calendar::getBaseRequester();
+        $oBaseRequester = Calendar::getBaseRequester();
         $oBaseRequester->addClauseEquals(
             "principaluri",
             "principals/" . $this->get("username")
@@ -75,7 +75,7 @@ class User extends \Flake\Core\Model\Db {
         parent::initFloating();
 
         # Initializing principals
-        $this->oIdentityPrincipal = new \Baikal\Model\Principal();
+        $this->oIdentityPrincipal = new Principal();
     }
 
     function get($sPropName) {
@@ -137,7 +137,7 @@ class User extends \Flake\Core\Model\Db {
 
         if ($bFloating) {
             # Creating default calendar for user
-            $oDefaultCalendar = new \Baikal\Model\Calendar();
+            $oDefaultCalendar = new Calendar();
             $oDefaultCalendar->set(
                 "principaluri",
                 "principals/" . $this->get("username")
@@ -158,7 +158,7 @@ class User extends \Flake\Core\Model\Db {
             $oDefaultCalendar->persist();
 
             # Creating default address book for user
-            $oDefaultAddressBook = new \Baikal\Model\AddressBook();
+            $oDefaultAddressBook = new AddressBook();
             $oDefaultAddressBook->set(
                 "principaluri",
                 "principals/" . $this->get("username")

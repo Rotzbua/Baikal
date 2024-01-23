@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class Database extends \Flake\Core\FLObject {
+abstract class Database extends FLObject {
     protected $debugOutput;
     protected $debug_lastBuiltQuery;
     protected $store_lastBuiltQuery;
@@ -197,7 +197,7 @@ abstract class Database extends \Flake\Core\FLObject {
             throw new \Exception("SQL ERROR in: '" . $sSql . "'; Message: " . $sMessage);
         }
 
-        return new \Flake\Core\Database\Statement($stmt);
+        return new Database\Statement($stmt);
     }
 
     function lastInsertId() {

@@ -47,40 +47,40 @@ if (!file_exists(PROJECT_PATH_ROOT . 'vendor/')) {
 require PROJECT_PATH_ROOT . 'vendor/autoload.php';
 
 # Bootstrapping Flake
-\Flake\Framework::bootstrap();
+Flake\Framework::bootstrap();
 
 # Bootstrap BaikalAdmin
-\BaikalAdmin\Framework::bootstrap();
+BaikalAdmin\Framework::bootstrap();
 
 # Create and setup a page object
-$oPage = new \Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
+$oPage = new Flake\Controller\Page(BAIKALADMIN_PATH_TEMPLATES . "Page/index.html");
 $oPage->injectHTTPHeaders();
 
 $oPage->setTitle("Baïkal " . BAIKAL_VERSION . " Web Admin");
 $oPage->setBaseUrl(PROJECT_URI);
 
-if (!\BaikalAdmin\Core\Auth::isAuthenticated()) {
-    if (\BaikalAdmin\Core\Auth::authenticate()) {
+if (!BaikalAdmin\Core\Auth::isAuthenticated()) {
+    if (BaikalAdmin\Core\Auth::authenticate()) {
         // Redirect to itself
         header('Location: ' . $_SERVER['REQUEST_URI']);
         exit();
     } else {
         // Draw login page
-        $oPage->zone("navbar")->addBlock(new \BaikalAdmin\Controller\Navigation\Topbar\Anonymous());
-        $oPage->zone("Payload")->addBlock(new \BaikalAdmin\Controller\Login());
+        $oPage->zone("navbar")->addBlock(new BaikalAdmin\Controller\Navigation\Topbar\Anonymous());
+        $oPage->zone("Payload")->addBlock(new BaikalAdmin\Controller\Login());
     }
 } else {
     // CSRF token check
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!isset($_POST['CSRF_TOKEN'])) {
-            throw new \Exception('CSRF token was not submitted. Try removing your cookies and log in again');
+            throw new Exception('CSRF token was not submitted. Try removing your cookies and log in again');
         }
         if ($_POST['CSRF_TOKEN'] !== $_SESSION['CSRF_TOKEN']) {
-            throw new \Exception('CSRF token did not match the session CSRF token. Please try to do this action again.');
+            throw new Exception('CSRF token did not match the session CSRF token. Please try to do this action again.');
         }
     }
 
-    $oPage->zone("navbar")->addBlock(new \BaikalAdmin\Controller\Navigation\Topbar());
+    $oPage->zone("navbar")->addBlock(new BaikalAdmin\Controller\Navigation\Topbar());
 
     # Route the request
     $GLOBALS["ROUTER"]::route($oPage);

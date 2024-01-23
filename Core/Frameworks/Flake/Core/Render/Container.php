@@ -44,7 +44,7 @@ abstract class Container extends \Flake\Core\Controller {
 
     function &zone($sZone) {
         if (!array_key_exists($sZone, $this->aZones)) {
-            $this->aZones[$sZone] = new \Flake\Core\Render\Zone($this, $sZone);
+            $this->aZones[$sZone] = new Zone($this, $sZone);
         }
 
         return $this->aZones[$sZone];

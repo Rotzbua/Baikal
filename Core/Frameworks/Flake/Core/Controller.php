@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class Controller extends \Flake\Core\FLObject {
+abstract class Controller extends FLObject {
     protected $aParams = [];
 
     function __construct($aParams = []) {
@@ -46,6 +46,7 @@ abstract class Controller extends \Flake\Core\FLObject {
         # TODO: il faut remplacer le mécanisme basé sur un nombre variable de paramètres en un mécanisme basé sur un seul paramètre "tableau"
         #$aParams = func_get_args();
         $sController = "\\" . get_called_class();
+
         #array_unshift($aParams, $sController);		# Injecting current controller as first param
         #return call_user_func_array($GLOBALS["ROUTER"] . "::buildRouteForController", $aParams);
         return $GLOBALS["ROUTER"]::buildRouteForController($sController, $aParams);

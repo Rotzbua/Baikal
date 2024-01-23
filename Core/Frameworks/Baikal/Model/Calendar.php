@@ -87,7 +87,7 @@ class Calendar extends \Flake\Core\Model\Db {
     }
 
     function getEventsBaseRequester() {
-        $oBaseRequester = \Baikal\Model\Calendar\Event::getBaseRequester();
+        $oBaseRequester = Calendar\Event::getBaseRequester();
         $oBaseRequester->addClauseEquals(
             "calendarid",
             $this->get("calendarid")
@@ -246,7 +246,7 @@ class Calendar extends \Flake\Core\Model\Db {
         $rSql = $GLOBALS["DB"]->exec_SELECTquery(
             "count(*)",
             "calendarinstances",
-            "calendarid" . "='" . $this->aData["calendarid"] . "'"
+            "calendarid='" . $this->aData["calendarid"] . "'"
         );
 
         if (($aRs = $rSql->fetch()) === false) {

@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-abstract class Requester extends \Flake\Core\FLObject {
+abstract class Requester extends FLObject {
     protected $sModelClass = '';
     protected $sOrderField = '';
     protected $sOrderDirection = 'ASC';

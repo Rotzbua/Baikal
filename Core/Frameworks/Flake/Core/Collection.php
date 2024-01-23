@@ -27,7 +27,7 @@
 
 namespace Flake\Core;
 
-class Collection extends \Flake\Core\FLObject implements \Iterator {
+class Collection extends FLObject implements \Iterator {
     protected $aCollection = [];
     protected $aMeta = [];
 
@@ -132,7 +132,7 @@ class Collection extends \Flake\Core\FLObject implements \Iterator {
     }
 
     static function fromArray($aData) {
-        $oColl = new \Flake\Core\Collection();
+        $oColl = new Collection();
         reset($aData);
         foreach ($aData as $mData) {
             $oColl->push($mData);
@@ -144,7 +144,7 @@ class Collection extends \Flake\Core\FLObject implements \Iterator {
     # Create a new collection like this one
     # This abstraction is useful because of CollectionTyped
     protected function newCollectionLikeThisOne() {
-        $oCollection = new \Flake\Core\Collection();    # two lines instead of one
+        $oCollection = new Collection();    # two lines instead of one
 
         return $oCollection;                            # as PHP needs a variable to return by ref
     }
@@ -175,14 +175,14 @@ class Collection extends \Flake\Core\FLObject implements \Iterator {
 
     function &__call($sName, $aArguments) {
         if (
-            strlen($sName) > 7 &&
-            $sName[0] === "s" &&
-            $sName[1] === "e" &&
-            $sName[2] === "t" &&
-            $sName[3] === "M" &&
-            $sName[4] === "e" &&
-            $sName[5] === "t" &&
-            $sName[6] === "a"
+            strlen($sName) > 7
+            && $sName[0] === "s"
+            && $sName[1] === "e"
+            && $sName[2] === "t"
+            && $sName[3] === "M"
+            && $sName[4] === "e"
+            && $sName[5] === "t"
+            && $sName[6] === "a"
         ) {
             $sKey = strtolower(substr($sName, 7, 1)) . substr($sName, 8);
             $mValue = &$aArguments[0];
@@ -199,14 +199,14 @@ class Collection extends \Flake\Core\FLObject implements \Iterator {
 
             return $res;    # To avoid 'Notice: Only variable references should be returned by reference'
         } elseif (
-            strlen($sName) > 7 &&
-            $sName[0] === "g" &&
-            $sName[1] === "e" &&
-            $sName[2] === "t" &&
-            $sName[3] === "M" &&
-            $sName[4] === "e" &&
-            $sName[5] === "t" &&
-            $sName[6] === "a"
+            strlen($sName) > 7
+            && $sName[0] === "g"
+            && $sName[1] === "e"
+            && $sName[2] === "t"
+            && $sName[3] === "M"
+            && $sName[4] === "e"
+            && $sName[5] === "t"
+            && $sName[6] === "a"
         ) {
             $sKey = strtolower(substr($sName, 7, 1)) . substr($sName, 8);
             if (array_key_exists($sKey, $this->aMeta)) {

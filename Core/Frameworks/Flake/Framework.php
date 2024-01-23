@@ -29,7 +29,7 @@ namespace Flake;
 
 use Symfony\Component\Yaml\Yaml;
 
-class Framework extends \Flake\Core\Framework {
+class Framework extends Core\Framework {
     static function rmBeginSlash($sString) {
         if (substr($sString, 0, 1) === "/") {
             $sString = substr($sString, 1);
@@ -180,9 +180,9 @@ class Framework extends \Flake\Core\Framework {
         require_once FLAKE_PATH_ROOT . "config.php";
 
         # Determine Router class
-        $GLOBALS["ROUTER"] = \Flake\Util\Tools::router();
+        $GLOBALS["ROUTER"] = Util\Tools::router();
 
-        if (!\Flake\Util\Tools::isCliPhp()) {
+        if (!Util\Tools::isCliPhp()) {
             ini_set("html_errors", true);
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
@@ -199,7 +199,7 @@ class Framework extends \Flake\Core\Framework {
 
         $aUrlInfo = parse_url(PROJECT_URI);
         define("FLAKE_DOMAIN", $_SERVER["HTTP_HOST"]);
-        define("FLAKE_URIPATH", \Flake\Util\Tools::stripBeginSlash($aUrlInfo["path"]));
+        define("FLAKE_URIPATH", Util\Tools::stripBeginSlash($aUrlInfo["path"]));
         unset($aUrlInfo);
 
         self::initDb();
@@ -211,8 +211,8 @@ class Framework extends \Flake\Core\Framework {
             if (isset($config["system"]["base_uri"]) && $config["system"]["base_uri"] !== "") {
                 // SabreDAV needs a "/" at the beginning of BASEURL
                 define("PROJECT_BASEURI",
-                        self::prependSlash(self::appendSlash($config["system"]["base_uri"])));
-                define("PROJECT_URI", \Flake\Util\Tools::getCurrentProtocol() . "://"
+                    self::prependSlash(self::appendSlash($config["system"]["base_uri"])));
+                define("PROJECT_URI", Util\Tools::getCurrentProtocol() . "://"
                     . $_SERVER["HTTP_HOST"] . PROJECT_BASEURI);
 
                 return;
@@ -234,7 +234,7 @@ class Framework extends \Flake\Core\Framework {
         define("PROJECT_BASEURI", self::prependSlash($sBaseUrl));    // SabreDAV needs a "/" at the beginning of BASEURL
 
         # Determine PROJECT_URI
-        $sProtocol = \Flake\Util\Tools::getCurrentProtocol();
+        $sProtocol = Util\Tools::getCurrentProtocol();
         $sHttpBaseUrl = $_SERVER["REQUEST_URI"];
         $sHttpBaseUrl = self::rmQuery($sHttpBaseUrl);
         $sHttpBaseUrl = self::rmScriptName($sHttpBaseUrl, $sScript);
@@ -283,7 +283,7 @@ class Framework extends \Flake\Core\Framework {
         }
 
         if (file_exists($config['database']['sqlite_file']) && is_readable($config['database']['sqlite_file']) && !isset($GLOBALS["DB"])) {
-            $GLOBALS["DB"] = new \Flake\Core\Database\Sqlite($config['database']['sqlite_file']);
+            $GLOBALS["DB"] = new Core\Database\Sqlite($config['database']['sqlite_file']);
 
             return true;
         }
@@ -309,7 +309,7 @@ class Framework extends \Flake\Core\Framework {
         }
 
         try {
-            $GLOBALS["DB"] = new \Flake\Core\Database\Mysql(
+            $GLOBALS["DB"] = new Core\Database\Mysql(
                 $config['database']['mysql_host'],
                 $config['database']['mysql_dbname'],
                 $config['database']['mysql_username'],
@@ -326,6 +326,6 @@ class Framework extends \Flake\Core\Framework {
     }
 
     static function isDBInitialized() {
-        return isset($GLOBALS["DB"]) && \Flake\Util\Tools::is_a($GLOBALS["DB"], "\Flake\Core\Database");
+        return isset($GLOBALS["DB"]) && Util\Tools::is_a($GLOBALS["DB"], "\Flake\Core\Database");
     }
 }

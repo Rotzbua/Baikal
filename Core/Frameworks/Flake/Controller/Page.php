@@ -126,6 +126,6 @@ class Page extends \Flake\Core\Render\Container {
         }
 
         $sHtml = "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $sCssUrl . "\" media=\"all\"/>";
-        $this->zone("head")->addBlock(new \Flake\Controller\HtmlBlock($sHtml));
+        $this->zone("head")->addBlock(new HtmlBlock($sHtml));
     }
 }
