@@ -16,7 +16,8 @@
         "ext-zlib"      : "*"
     },
     "require-dev" : {
-        "friendsofphp/php-cs-fixer": "3.89.2",
+        "friendsofphp/php-cs-fixer": "3.92.3",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan": "~2.1.32"
     },
     "replace" : {
